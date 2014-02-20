@@ -1,0 +1,15 @@
+<div id="myModal" class="reveal-modal deviseForm" data-reveal>
+  <%= form_for(:user, :url => session_path(:user)) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email, :id => 'signInEmail' %>
+    <%= f.label :password %>
+    <%= f.password_field :password, :id => 'signInPassword'  %>
+    <span>
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+    <%= link_to "Forgot your password?", new_password_path(:user) %>
+    </span>
+    &nbsp;
+    <%= f.submit :value => 'Sign in', :class => 'button radius', :id => 'signInButton' %>
+  <% end %>
+</div>

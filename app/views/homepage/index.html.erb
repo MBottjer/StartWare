@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>StartWare</title>
+    <link href='/stylesheets/application.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <div class="headerWrapper">
+      <div class="row">
+      <div class="small-11 small-centered columns">
+      
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">StartWare</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <% if current_user %>
+            <li class="active"><a href="#"><%=link_to "Sign Out", destroy_user_session_path, method: :delete %></a></li>
+            
+            <% else %>
+            <li class="active"><a href="#" data-reveal-id="myModal">Sign In</a></li>
+            <li><a href="#" data-reveal-id="signUpModal">Sign Up</a></li>
+            <% end %>
+            <li class="has-dropdown">
+              <a href="#">Categories</a>
+              <ul class="dropdown">
+                <li><a href="#">First link in dropdown</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li><a href="#">Home</a></li>
+          </ul>
+        </section>
+      </nav>
+      </div>
+      </div>
+    </div>
+
+    </header>
+
+    <%= render 'sign_in_modal' %>
+    <%= render 'sign_up_modal' %> 
+
+    <div class="row">
+      <div class="small-9 small-centered columns yellow">
+          <% if current_user %>
+          <div id="welcomeMessage">
+            <p id="welcomeMessage">Welcome <%= @user.email %>,</p> 
+          </div>
+          <div id="slogan">
+            Check out awesome products by startups and artwork by budding artists.
+          </div>
+          <% end %>
+          <% @product.each do |product| %>
+
+              <p><%= product.product_name %></p>
+              <p><%= product.description %></p>
+          <% end %>
+      </div>
+    </div>
+  
+  </body>
+</html>
