@@ -1,7 +1,7 @@
 <div class="row">
   <div class="small-9 small-centered columns yellow">
 
-    <%= form_for([current_user, current_user.products.build], :html => { :multipart => true }) do |f| %>
+    <%= form_for(:product, url: user_product_path(current_user, @product), method: :patch, :html => { :multipart => true }) do |f| %>
       <p>
         <%= f.file_field :photo %>
       </p>

@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
+  belongs_to :user
 
-  validates :product_name, uniqueness: { case_sensitive: false }, presence: true, length: { minimum: 2}
-
+  has_attached_file :photo, :styles => { :medium => "500x500>"}
 end

@@ -14,5 +14,11 @@ I need t obe able to sign in
     When I enter my sign up details
     Then I should be signed in
 
+  @sign_in
+  Scenario: Signing out
+    Given I am on the homepage
+    When I press Sign Out
+    Then I should no longer be signed in
+
 
 

@@ -1,38 +1,36 @@
 class ProductsController < ApplicationController
 
   def new
-    @post = Post.new 
-  end
-
-  def index
-    @product = Product.all 
   end
 
   def create
-    @product = Product.new (params[:post].permit(:product_name, :description))
-    if @product.save 
-      redirect_to @product
-    else 
-      render 'new'
+    @user = current_user
+    @product = @user.products.create(product_params)
+    redirect_to '/'
   end
 
-  def show 
+  def destroy
+    @user = current_user
+    @product = @user.products.find(params[:id])
+    @product.destroy
+    redirect_to '/'
+  end
+
+  def edit
     @product = Product.find(params[:id])
   end
 
   def update 
-    @product = Product.find(params[:id])
-
-    if @product.update(params[:product].permit(:product_name, :description))
-      redirect_to @product 
-    else 
-      render 'edit'
-    end
+    @product = current_user.products.find(params[:id])
+    @product.update(product_params)
+    redirect_to '/'
   end
 
   private
-  def post_params
-    params.require(:product).permit(:product_name, :description)
-  end
+
+    def product_params
+      params.require(:product).permit(:price, :description, :photo)
+    end
+
 
 end

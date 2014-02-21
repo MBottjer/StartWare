@@ -27,3 +27,11 @@ When(/^I enter my sign up details$/) do
   find('#signUpPasswordConfirmation').set('devesh1234')
   find('#signUpButton').click
 end
+
+When(/^I press Sign Out$/) do
+  click_link "Sign Out"
+end
+
+Then(/^I should no longer be signed in$/) do
+  expect(page).to have_content "Sign Up"
+end
