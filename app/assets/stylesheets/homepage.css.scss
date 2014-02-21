@@ -48,3 +48,35 @@ p#welcomeMessage {
 div#slogan {
   
 }
+
+div.productStreamWrapper {
+  margin-top: 20px;
+}
+
+div.productWrapper {
+  background-color: white;
+  width: 520px;
+  height: 510px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:10px;
+}
+
+img.image {
+  margin:10px;
+  height: 400px;
+  width: 500px;
+}
+
+div.productDetails {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+p.productDescription {
+  margin-top: 5px;
+}
+
+span.productOptions {
+  float: right;
+}
