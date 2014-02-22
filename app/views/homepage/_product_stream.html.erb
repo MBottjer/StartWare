@@ -1,18 +1,46 @@
+<% if @products != nil %>
+  
+  <% id = 1 %>
 
-<% @products.each do |product| %>
-  <div class="productWrapper">
-    <div class="productImage">
-      <%= image_tag product.photo.url(:medium), :class => "image" %>
+  <% @products.each do |product| %>
+
+    <div class="productWrapper">
+      <div class="productImage">
+        <a data-reveal-id="productModal<%= id %>">
+          <%= image_tag product.photo.url(:medium), :class => "image" %>
+        </a>
+        <a class="clickMe"><%= product.product_name %> by <%= product.company_name %></a>
+      </div>
+      <div class="productDetails">
+        <b>Price</b> £<%= product.price %>
+        <p class="productDescription"><%= Product.limit_description(product.description) %></p>
+        <span class="productOptions">
+          <% if current_user != nil && current_user.id == product.user_id %>
+          <%= link_to 'Delete Product', user_product_path(current_user.id, product.id),
+                       method: :delete,
+                       data: { confirm: 'Are you sure?' } %> |
+          <%= link_to 'Edit', edit_user_product_path(current_user.id, product.id) %>
+          <% end %>
+        </span>
+      </div>
     </div>
-    <div class="productDetails">
-      <b>Price</b> £<%= product.price %>
-      <p class="productDescription"><%= Product.limit_description(product.description) %></p>
-      <span class="productOptions">
-        <%= link_to 'Delete Product', user_product_path(current_user.id, product.id),
-                     method: :delete,
-                     data: { confirm: 'Are you sure?' } %> |
-        <%= link_to 'Edit', edit_user_product_path(current_user.id, product.id) %>
-      </span>
+
+    <div id="productModal<%= id %>" class="reveal-modal largeModal" data-reveal>
+      <div class="modalImage">
+        <%= image_tag product.photo.url(:medium), :class => "modal" %>
+      </div>
+      <div class="textWrapper">
+        <div id="productTitle">
+          <%= product.product_name %>
+        </div>
+        <p> by <a href="<%= product.company_url %>"><%= product.company_name %></a> </p>
+        <p class="description"><%= product.description %></p>
+        <span><p class="price"> <b>Price:</b> £<%= product.price %></p></span>
+      </div>
     </div>
-  </div>
+
+    <% id+=1 %>
+
+  <% end %>
+
 <% end %>

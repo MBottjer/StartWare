@@ -1,5 +1,5 @@
 body {
-  background-color: #ebeced;
+  background-color: #edeced;
 }
 
 // header
@@ -69,6 +69,7 @@ img.image {
 }
 
 div.productDetails {
+  // margin-top:-20px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -79,4 +80,91 @@ p.productDescription {
 
 span.productOptions {
   float: right;
+}
+
+.productImage {
+    position: relative;
+    padding-top: 2px;
+}
+.productImage img {
+    display: block;
+    margin-top: 10px;
+}
+.productImage .clickMe {
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    height:40px;
+    line-height:35px;
+    left: 0px;
+    right: 0px;
+    padding: 2px 0px;
+    color: #ffffff;
+    background: #333333;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.productImage:hover .clickMe {
+    opacity: 0.8;
+}
+
+// product modal
+
+div#productModal {
+  
+}
+
+div.largeModal {
+  height:420px;
+  width:1000px;
+  // padding:0;
+  border-width: 2px;
+  border-color: #333333; 
+  padding:0px;
+}
+
+div.modalImage {
+  // float:left;
+  display:inline-block;
+  padding-left:0px;
+  height:500px;
+  width:400px;
+
+}
+
+img.modal {
+  margin-left:5px;
+  margin-top:5px;
+  height:400px;
+  width:400px;
+}
+
+div.textWrapper {
+  // margin-left:550px;
+  display:inline-block;
+  padding-top: 5px;
+  height:300px;
+  width:500px;
+  padding-left: 40px;
+  position:absolute;
+}
+
+div#productTitle {
+  font-size: 30px;
+}
+
+p.description {
+  text-align:justify;
+}
+
+p.price {
+  position: relative;
+  line-height: 3;
 }
