@@ -9,6 +9,11 @@ body {
   width: 100%;
 }
 
+// ul.left li a {
+//   font-size:1.0625rem;
+//   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// }
+
 // modal 
 
 .deviseForm {
@@ -167,4 +172,14 @@ p.description {
 p.price {
   position: relative;
   line-height: 3;
+  display:inline-block;
+}
+
+a.facebookLink {
+  margin-left:20px;
+  float: right;
+}
+
+a.twitterLink {
+  float: right;
 }

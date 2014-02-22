@@ -35,7 +35,16 @@
         </div>
         <p> by <a href="<%= product.company_url %>"><%= product.company_name %></a> </p>
         <p class="description"><%= product.description %></p>
-        <span><p class="price"> <b>Price:</b> £<%= product.price %></p></span>
+        
+        <p class="price"> <b>Price:</b> £<%= product.price %></p>
+        <% if product.facebook_url != nil %>
+          <a href="<%= product.facebook_url %>" class="facebookLink"><i class="fa fa-facebook fa-2x"></i></a>
+        <% end %>
+
+        <% if product.twitter_url != nil %>
+          <a href="<%= product.twitter_url %>" class="twitterLink"><i class="fa fa-twitter fa-2x"></i></a>
+        <% end %>
+          
       </div>
     </div>
 
