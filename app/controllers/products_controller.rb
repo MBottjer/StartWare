@@ -1,12 +1,17 @@
 class ProductsController < ApplicationController
 
   def new
+    @product = Product.new
   end
 
   def create
     @user = current_user
-    @product = @user.products.create(product_params)
-    redirect_to '/'
+    @product = @user.products.new(product_params)
+    if @product.save
+      redirect_to '/'
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -29,7 +34,7 @@ class ProductsController < ApplicationController
   private
 
     def product_params
-      params.require(:product).permit(:price, :description, :photo, :product_name, :company_name, :company_url, :facebook_url, :twitter_url)
+      params.require(:product).permit(:price, :description, :photo, :product_name, :company_name, :company_url, :facebook_url, :twitter_url, :product_url, :category_id)
     end
 
 

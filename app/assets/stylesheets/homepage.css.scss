@@ -2,6 +2,10 @@ body {
   background-color: #edeced;
 }
 
+div.productArea {
+  // can change background color of product stream here
+}
+
 // header
 
 .headerWrapper {
@@ -182,4 +186,21 @@ a.facebookLink {
 
 a.twitterLink {
   float: right;
+}
+
+// new product form 
+
+.newProductForm {
+  padding-top: 20px;
+  background-color: white;
+}
+
+p.newProductIntro {
+  font-size: 30px;
+  color: #008cba;
+  font-family:"Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+div.newForm {
+  color: #008cba;
 }

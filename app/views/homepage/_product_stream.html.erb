@@ -31,7 +31,7 @@
       </div>
       <div class="textWrapper">
         <div id="productTitle">
-          <%= product.product_name %>
+          <a href="<%= product.product_url %>"><%= product.product_name %></a>
         </div>
         <p> by <a href="<%= product.company_url %>"><%= product.company_name %></a> </p>
         <p class="description"><%= product.description %></p>
