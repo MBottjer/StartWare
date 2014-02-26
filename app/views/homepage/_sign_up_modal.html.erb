@@ -9,7 +9,10 @@
     <%= f.check_box :remember_me %>
     <%= f.label :remember_me %>
     &nbsp;
-    <%= f.submit :value => 'Sign Up', :class => 'button radius', :id => 'signUpButton' %>
-    
+    <%= f.submit :value => 'Sign Up', :class => 'button radius signUpButton' %>
+    <div class="signUpButtonDivider"> Or </div>
+    <%= link_to user_omniauth_authorize_path(:facebook), :class => 'button radius signInButton signInButtonFacebook' do %>
+    Sign Up with &nbsp; <i class="fa fa-facebook fa-1x"></i>acebook
+    <% end %>
   <% end %>
 </div>

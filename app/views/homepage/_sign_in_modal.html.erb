@@ -10,7 +10,10 @@
     <%= link_to "Forgot your password?", new_password_path(:user) %>
     </span>
     &nbsp;
-    <%= f.submit :value => 'Sign in', :class => 'button radius', :id => 'signInButton' %>
-    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+    <%= f.submit :value => 'Sign in', :class => 'button radius signInButton' %>
+    <div class="signUpButtonDivider"> Or </div>
+    <%= link_to user_omniauth_authorize_path(:facebook), :class => 'button radius signInButton signInButtonFacebook' do %>
+    Sign In with &nbsp; <i class="fa fa-facebook fa-1x"></i>acebook
+    <% end %>
   <% end %>
 </div>
