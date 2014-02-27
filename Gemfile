@@ -37,6 +37,9 @@ gem "font-awesome-rails"
 
 gem 'omniauth-facebook'
 
+gem 'aws-sdk'
+gem 'nokogiri'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

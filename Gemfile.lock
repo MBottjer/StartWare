@@ -28,6 +28,10 @@ GEM
     addressable (2.3.5)
     arel (4.0.2)
     atomic (1.1.14)
+    aws-sdk (1.31.3)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
     capybara (2.2.1)
@@ -196,6 +200,7 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
     websocket-driver (0.3.2)
@@ -206,6 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   capybara
   coffee-rails (~> 4.0.0)
   cucumber-rails
@@ -216,6 +222,7 @@ DEPENDENCIES
   foundation-rails
   jquery-rails
   launchy
+  nokogiri
   omniauth-facebook
   paperclip (~> 3.0)
   pg
