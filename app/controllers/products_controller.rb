@@ -27,8 +27,13 @@ class ProductsController < ApplicationController
 
   def update 
     @product = current_user.products.find(params[:id])
-    @product.update(product_params)
-    redirect_to '/'
+
+    if @product.update(product_params)
+      redirect_to '/'
+    else
+      render 'edit'
+    end
+    
   end
 
   private
