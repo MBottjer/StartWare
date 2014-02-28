@@ -16,4 +16,5 @@
 /tmp
 /config/application.yml
 /config/newrelic.yml
+/config/secrets.yml
 
