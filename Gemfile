@@ -40,6 +40,8 @@ gem 'omniauth-facebook'
 gem 'aws-sdk'
 gem 'nokogiri'
 
+gem 'newrelic_rpm'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
